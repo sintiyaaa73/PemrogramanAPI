@@ -1,0 +1,71 @@
+{
+    "endpoint": {
+      "GET": {
+        "description": "Retrieve all ticket information",
+        "url": "/tickets",
+        "parameters": [],
+        "response": {
+          "status": "success",
+          "data": [
+            {
+              "nomor_id": 1,
+              "judul_film": "Movie A",
+              "harga_film": 10,
+              "tanggal_tayang": "2024-03-14"
+            },
+            {
+              "nomor_id": 2,
+              "judul_film": "Movie B",
+              "harga_film": 12,
+              "tanggal_tayang": "2024-03-15"
+            }
+          ]
+        }
+      },
+      "POST": {
+        "description": "Add a new ticket",
+        "url": "/tickets",
+        "parameters": {
+          "judul_film": "string",
+          "harga_film": "integer",
+          "tanggal_tayang": "string (format: YYYY-MM-DD)"
+        },
+        "response": {
+          "status": "success",
+          "data": {
+            "status": "data berhasil disimpan"
+          }
+        }
+      },
+      "DELETE": {
+        "description": "Delete a ticket",
+        "url": "/tickets/:nomor_id",
+        "parameters": {
+          "nomor_id": "integer"
+        },
+        "response": {
+          "status": "success",
+          "data": {
+            "status": "data berhasil dihapus"
+          }
+        }
+      },
+      "PUT": {
+        "description": "Update a ticket",
+        "url": "/tickets/:nomor_id",
+        "parameters": {
+          "nomor_id": "integer",
+          "judul_film": "string",
+          "harga_film": "integer",
+          "tanggal_tayang": "string (format: YYYY-MM-DD)"
+        },
+        "response": {
+          "status": "success",
+          "data": {
+            "status": "data berhasil diedit"
+          }
+        }
+      }
+    }
+  }
+  
